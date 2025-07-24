@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #faf6f2;
+  color: #232323;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background: #e2e2e2;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+  padding: 0;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 16px 24px;
+}
+
+.brand {
+  font-weight: 700;
+  font-size: 1.5em;
+  letter-spacing: 2px;
+  color: #325588;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5em;
+}
+
+.nav-links li {
+  display: inline;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #232323;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: #3e6fac;
+}
+
+.intro {
+  max-width: 700px;
+  margin: 60px auto 32px;
+  background: #fff;
+  border-radius: 24px;
+  box-shadow: 0 4px 20px rgba(50,85,136,0.05);
+  padding: 48px 32px 32px 32px;
+  text-align: center;
+}
+
+.intro h1 {
+  font-size: 2.1em;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #325588;
+}
+
+.intro .highlight {
+  color: #e87d49;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+.intro blockquote {
+  margin: 28px auto 0;
+  font-style: italic;
+  color: #662e9b;
+}
+
+section {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 32px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(50,85,136,0.04);
+}
+
+section h2 {
+  font-size: 1.4em;
+  color: #325588;
+  margin-bottom: 16px;
+}
+
+footer {
+  text-align: center;
+  color: #888;
+  margin: 32px auto 10px;
+  font-size: 0.95em;
+  letter-spacing: 1px;
+}
+
+/* Responsive Design */
+@media (max-width: 750px) {
+  .navbar, .intro, section {
+    padding: 16px;
+    max-width: 96vw;
+  }
+  .nav-links {
+    flex-direction: column;
+    gap: 0.8em;
+  }
+}
