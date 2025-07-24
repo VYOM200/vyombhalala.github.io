@@ -2,73 +2,134 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>My Portfolio</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VYOM Bhalala</title>
+
+  <style>
+    /* ------------- 1. CORE RESETS ------------- */
+    *,
+    *::before,
+    *::after{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+    }
+    html,body{
+      height:100%;
+      scroll-behavior:smooth;
+      font-family:'Segoe UI','Helvetica Neue',Arial,sans-serif;
+      color:#2d2d2d;
+      background:#fdfaf5;
+    }
+
+    /* ------------- 2. HERO SECTION ------------- */
+    .hero{
+      position:relative;
+      height:100vh;
+      width:100%;
+      overflow:hidden;
+    }
+    /* Background image + slow zoom */
+    .hero::before{
+      content:"";
+      position:absolute;
+      top:0;left:0;
+      height:100%;
+      width:100%;
+      background:url("WhatsApp-Image-2025-07-23-at-18.38.15_f50edc24.jpg") center/cover no-repeat;
+      /* zoom animation */
+      animation:zoom 30s ease-in-out infinite alternate;
+      z-index:-1;
+    }
+    @keyframes zoom{
+      0%{transform:scale(1);}
+      100%{transform:scale(1.15);}
+    }
+
+    /* Centered name */
+    .hero__title{
+      position:absolute;
+      top:50%;
+      left:50%;
+      transform:translate(-50%,-50%);
+      font-size:clamp(2.5rem,6vw,6rem);
+      font-weight:700;
+      letter-spacing:0.3rem;
+      text-align:center;
+      color:#ffffff;
+      text-shadow:0 0 10px rgba(0,0,0,0.6);
+      animation:fade-up 2s ease-out both;
+    }
+    @keyframes fade-up{
+      from{opacity:0;transform:translate(-50%,-40%);}
+      to{opacity:1;transform:translate(-50%,-50%);}
+    }
+
+    /* ------------- 3. QUOTE SECTION ------------- */
+    .quote-section{
+      padding:8rem 1.5rem 10rem;
+      max-width:900px;
+      margin:0 auto;
+      line-height:1.7;
+      font-size:1.125rem;
+    }
+    .quote-section p{
+      opacity:0;
+      transform:translateY(30px);
+      animation:reveal 1.2s ease-out forwards;
+    }
+    /* staggering animation delay */
+    .quote-section p:nth-child(1){animation-delay:0.3s;}
+    .quote-section p:nth-child(2){animation-delay:0.9s;}
+    .quote-section p:nth-child(3){animation-delay:1.5s;}
+    .quote-section p:nth-child(4){animation-delay:2.1s;}
+
+    @keyframes reveal{
+      to{opacity:1;transform:translateY(0);}
+    }
+
+    /* Emphasize questions */
+    .quote-section strong{
+      display:block;
+      font-size:1.35rem;
+      font-weight:700;
+      margin:2rem 0 1rem;
+      text-align:center;
+    }
+
+    /* ------------- 4. SCROLL INDICATOR (optional) ------------- */
+    .scroll-hint{
+      position:absolute;
+      bottom:2rem;
+      left:50%;
+      transform:translateX(-50%);
+      font-size:0.9rem;
+      color:#ffffff;
+      letter-spacing:0.1rem;
+      opacity:0.75;
+      animation:bounce 2.4s infinite;
+    }
+    @keyframes bounce{
+      0%,100%{transform:translate(-50%,0);}
+      50%{transform:translate(-50%, -8px);}
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <nav class="navbar">
-      <div class="brand">MY NAME</div>
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About me</a></li>
-        <li><a href="#art">Art Portfolio</a></li>
-        <li><a href="#photography">Photography</a></li>
-        <li><a href="#articles">Articles</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-  <section class="intro" id="home">
-    <h1>Hey there! Welcome to my corner of the internet</h1>
-    <p>
-      I am a growing—<br>
-      <span class="highlight">STUDENT, SCIENTIST, ARTIST, PHOTOGRAPHER AND WRITER</span>
-    </p>
-    <blockquote>
-      "Life is not about letting the storm pass, but learning to dance in the rain."
-    </blockquote>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1 class="hero__title">VYOM&nbsp;Bhalala</h1>
+    <div class="scroll-hint">SCROLL&nbsp;▼</div>
   </section>
 
-  <section class="about" id="about">
-    <h2>About Me</h2>
-    <p>
-      Write a brief introduction about yourself, your background, and your interests...
-    </p>
+  <!-- QUOTE / ABOUT SECTION -->
+  <section class="quote-section">
+    <p>Well, it is too raw to be called a blog and a bit overdone to be called a personal note. This is nothing but a testimony of my pursuit of happiness.</p>
+    <p><strong>Why do we delight in intellectual pursuits?</strong></p>
+    <p><strong>Is your consciousness really yours?</strong></p>
+    <p>But these are the very questions that keep you away from happiness.</p>
   </section>
 
-  <section class="portfolio" id="art">
-    <h2>Art Portfolio</h2>
-    <p>
-      Showcase your artwork categories and samples here.
-    </p>
-  </section>
-
-  <section class="photography" id="photography">
-    <h2>Photography</h2>
-    <p>
-      Share your best photos or create galleries by theme.
-    </p>
-  </section>
-
-  <section class="articles" id="articles">
-    <h2>Articles</h2>
-    <p>
-      Link to your writing, essays, or blog posts.
-    </p>
-  </section>
-
-  <section class="contact" id="contact">
-    <h2>Contact Me</h2>
-    <p>
-      Add your email address or a contact form here.
-    </p>
-  </section>
-
-  <footer>
-    <p>© 2025 Your Name</p>
-  </footer>
 </body>
 </html>
